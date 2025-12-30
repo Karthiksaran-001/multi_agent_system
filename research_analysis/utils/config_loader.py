@@ -2,8 +2,8 @@ import os
 import yaml
 import json
 from pathlib import Path
-from logger import GLOBAL_LOGGER as log
-from exception.custom_exception import ResearchAnalystException
+from research_analysis.logger import GLOBAL_LOGGER as log
+from research_analysis.exception.custom_exception import ResearchAnalystException
 
 
 def _project_root() -> Path:
