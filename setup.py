@@ -4,7 +4,7 @@ setup(
     name = "research_analysis",
     author= "Karthik Saran",
     version="0.0.1",
-    description="Mulyti-agent system for research analysis using LLMs",
+    description="Multi-agent system for research analysis using LLMs",
     packages= find_packages(),
     install_requires =[
     "langchain",
