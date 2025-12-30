@@ -1,9 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]         # PEP 660 editable support ke liye naya setuptools
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "multi-agent-system"
+name = "automated-research-report-generation"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+
+requires-python = ">=3.11"
 dependencies = [
-    "langgraph>=1.0.5",
+    "ipykernel>=6.30.1",
+    "langchain-community>=0.3.30",
+    "langchain-core>=0.3.78",
+    "langchain-google-genai==2.1.8",
+    "langchain-groq==0.3.6",
+    "langchain-openai==0.3.32",
+    "langgraph>=0.6.8",
+    "structlog==25.4.0",
+    "tavily-python>=0.7.12",
+    "wikipedia>=1.4.0",
+]
+
+# Optional: authors, license
+authors = [{ name = "Karthieyan" }]
+license = { text = "Proprietary" }
+
+[tool.setuptools.packages.find]
+where = ["research_analysis"] 
+
+[tool.uv.sources]
+automated-research-report-generation = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "aiofiles>=23.2.1",
+    "automated-research-report-generation",
+    "bcrypt==3.2.2",
+    "fastapi==0.120.0",
+    "httpx==0.28.1",
+    "jinja2==3.1.6",
+    "langchain-community==0.3.30",
+    "langchain-core==0.3.78",
+    "langchain-google-genai==2.1.8",
+    "langchain-groq==0.3.6",
+    "langchain-openai==0.3.32",
+    "langgraph==0.6.8",
+    "passlib==1.7.4",
+    "python-docx==1.2.0",
+    "python-multipart>=0.0.21",
+    "reportlab==4.4.4",
+    "sqlalchemy==2.0.43",
+    "structlog==25.4.0",
+    "tavily-python==0.7.12",
+    "uvicorn==0.38.0",
+    "wikipedia==1.4.0",
 ]
