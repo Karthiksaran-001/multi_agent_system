@@ -97,7 +97,7 @@ class ModelLoader:
     # ----------------------------------------------------------------------
     # 🔹 LLM Loader
     # ----------------------------------------------------------------------
-    def load_llm(self):
+    def load_llm(self , model = "groq"):
         """
         Load and return a chat-based LLM according to the configured provider.
 
@@ -110,7 +110,10 @@ class ModelLoader:
         """
         try:
             llm_block = self.config["llm"]
-            provider_key = os.getenv("LLM_PROVIDER", "groq")
+            if model:
+                provider_key = model
+            else:
+                provider_key = os.getenv("LLM_PROVIDER", "groq")
 
             if provider_key not in llm_block:
                 log.error("LLM provider not found in configuration", provider=provider_key)
